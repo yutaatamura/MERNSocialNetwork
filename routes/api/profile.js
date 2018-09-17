@@ -44,7 +44,7 @@ router.get(
 // @route   GET api/profile/all
 // @desc    Get all profiles
 // @access  Public
-router.get("all", (req, res) => {
+router.get("/all", (req, res) => {
   const errors = {};
 
   Profile.find()
@@ -52,7 +52,7 @@ router.get("all", (req, res) => {
     .then(profiles => {
       if (!profiles) {
         errors.noprofile = "There are no profiles";
-        return res.status(404).json();
+        return res.status(404).json(errors);
       }
 
       res.json(profiles);
