@@ -43,7 +43,7 @@ router.post("/register", (req, res) => {
       const newUser = new User({
         name: req.body.name,
         email: req.body.email,
-        avatar: avatar,
+        avatar,
         password: req.body.password
       });
 
@@ -76,7 +76,7 @@ router.post("/login", (req, res) => {
   const password = req.body.password;
 
   // Find user by email
-  User.findOne({ email: email }).then(user => {
+  User.findOne({ email }).then(user => {
     // Check for user
     if (!user) {
       errors.email = "User not found";
