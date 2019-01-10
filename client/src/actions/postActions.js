@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { ADD_POST, GET_ERRORS , GET_POSTS, POST_LOADING} from "./types";
+import { ADD_POST, GET_ERRORS, GET_POSTS, POST_LOADING } from "./types";
 
 //Add Post
 export const addPost = postData => dispatch => {
@@ -21,7 +21,7 @@ export const addPost = postData => dispatch => {
 };
 
 // Get Posts
-export const addPost = () => dispatch => {
+export const getPosts = () => dispatch => {
   dispatch(setPostLoading());
   axios
     .get("/api/posts")
@@ -43,5 +43,5 @@ export const addPost = () => dispatch => {
 export const setPostLoading = () => {
   return {
     type: POST_LOADING
-  }
-}
+  };
+};
