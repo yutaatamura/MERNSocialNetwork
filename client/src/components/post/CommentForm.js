@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { addComment } from "../../actions/postActions";
-import { timingSafeEqual } from "crypto";
 
 class CommentForm extends Component {
   constructor(props) {
